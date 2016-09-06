@@ -11,9 +11,9 @@ First Edition by Robert Nystrom in 2014 [http://bit.ly/1if2D6s]
 - Visual Studio 2012
 
 ###### SOURCE CODE
-https://github.com/SteveProXNA/GameProgrammingPatterns
+https://github.com/StevePro7/GameProgrammingPatterns
 
-###### CHAPTERS
+###### PARTS
 - Part01 Introduction
 - Part02 Design Patterns Revisited
 - Part03 Sequencing Patterns  
