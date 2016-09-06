@@ -1,0 +1,13 @@
+#include "TypeObject04.h"
+
+using namespace BreedCtorMonster;
+
+template<class T>
+void use(const T& obj)
+{
+}
+
+int main()
+{
+    return 0;
+}

@@ -1,0 +1,16 @@
+#include "ByteCode01.h"
+
+using namespace Bytecode;
+
+int main()
+{
+    Expression* e1 = new NumberExpression(1);
+    Expression* e2 = new NumberExpression(2);
+
+    AdditionExpression ae(e1, e2);
+    double result = ae.evaluate();
+
+    delete e2;
+    delete e1;
+    return 0;
+}

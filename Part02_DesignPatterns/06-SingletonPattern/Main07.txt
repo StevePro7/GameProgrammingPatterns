@@ -1,0 +1,13 @@
+#include <iostream>
+#include "Singleton07.h"
+
+using namespace Singleton07;
+
+int main()
+{
+    BulletManager manager;
+    Bullet* bullet = manager.create(10, 20);
+    bool isOnScreen = manager.isOnScreen(*bullet);
+    manager.move(*bullet);
+    return 0;
+}

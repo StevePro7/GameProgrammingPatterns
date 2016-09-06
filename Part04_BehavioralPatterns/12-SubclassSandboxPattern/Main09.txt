@@ -1,0 +1,12 @@
+#include "SubclassSandbox09.h"
+
+using namespace StaticState;
+
+int main()
+{
+    ParticleSystem* particles = new ParticleSystem;
+    Superpower::init(particles);
+
+    delete particles;
+    return 0;
+}

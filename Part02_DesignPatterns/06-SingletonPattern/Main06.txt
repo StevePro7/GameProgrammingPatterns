@@ -1,0 +1,13 @@
+#include <iostream>
+#include "Singleton06.h"
+
+using namespace Singleton06;
+
+int main()
+{
+    FileSystem* fileSystem1 = new FileSystem();
+    //FileSystem* fileSystem2 = new FileSystem();
+    //delete fileSystem2;
+    delete fileSystem1;
+    return 0;
+}

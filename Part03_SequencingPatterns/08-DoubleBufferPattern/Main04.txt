@@ -1,0 +1,129 @@
+#include "DoubleBuffer04.h"
+
+using namespace BufferedSlapstick;
+
+void sample01();
+void sample02();
+void testComedy01();
+void testComedy();
+
+int main()
+{
+    // IMPORTANT:
+    // Update 2x!
+
+    //sample01();
+    //sample02();
+    testComedy();
+    return 0;
+}
+
+void sample01()
+{
+    Stage stage;
+
+    Comedian* harry = new Comedian("harry");
+    Comedian* baldy = new Comedian("baldy");
+    Comedian* chump = new Comedian("chump");
+
+    harry->face(baldy);
+    baldy->face(chump);
+    chump->face(harry);
+
+    stage.add(harry, 0);
+    stage.add(baldy, 1);
+    stage.add(chump, 2);
+
+    harry->slap();
+    stage.update();
+    stage.update();
+
+    // OUTPUT:
+    // harry was slapped.
+    // baldy was slapped.
+    // chump was slapped.
+}
+
+void sample02()
+{
+    Stage stage;
+
+    Comedian* harry = new Comedian("harry");
+    Comedian* baldy = new Comedian("baldy");
+    Comedian* chump = new Comedian("chump");
+
+    harry->face(baldy);
+    baldy->face(chump);
+    chump->face(harry);
+
+    stage.add(harry, 2);
+    stage.add(baldy, 1);
+    stage.add(chump, 0);
+
+    harry->slap();
+    stage.update();
+    stage.update();
+
+    // OUTPUT:
+    // chump was slapped.
+    // baldy was slapped.
+    // harry was slapped.
+}
+
+void testComedy01(int a, int b, int c)
+{
+    std::cout << "test" << std::endl;
+
+    Stage stage;
+
+    Comedian* larry = new Comedian("larry");
+    Comedian* curly = new Comedian("curly");
+    Comedian* shemp = new Comedian("shemp");
+
+    larry->face(curly);
+    curly->face(shemp);
+    shemp->face(larry);
+
+    stage.add(larry, a);
+    stage.add(curly, b);
+    stage.add(shemp, c);
+
+    larry->slap();
+    for (int i = 0; i < 3; ++i)
+    {
+        std::cout << "update" << std::endl;
+        stage.update();
+        //stage.update();
+    }
+
+    std::cout << std::endl;
+}
+
+void testComedy()
+{
+    testComedy01(0, 1, 2);
+    testComedy01(2, 1, 0);
+
+    // OUTPUT:
+    // test01
+    // update
+    // update
+    // larry was slapped.
+    // curly was slapped.
+    // shemp was slapped.
+    // update
+    // larry was slapped.
+    // curly was slapped.
+    // shemp was slapped.
+
+    // test02
+    // update
+    // update
+    // shemp was slapped.
+    // curly was slapped.
+    // larry was slapped.
+    // update
+    // shemp was slapped.
+    // curly was slapped.
+    // larry was slapped.
+}

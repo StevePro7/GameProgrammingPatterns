@@ -1,0 +1,7 @@
+#include "ByteCode00.h"
+
+int main()
+{
+    interpretInstruction(INST_SET_WISDOM);
+    return 0;
+}

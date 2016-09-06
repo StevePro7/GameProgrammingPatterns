@@ -1,0 +1,12 @@
+#include "EventQueue02.h"
+
+using namespace Unqueued;
+
+int main()
+{
+    Audio::playSound(SOUND_BLOOP, VOL_MAX);
+
+    Menu menu;
+    menu.onSelect(0);
+    return 0;
+}

@@ -1,0 +1,16 @@
+#include "ServiceLocator01.h"
+
+using namespace Version01;
+
+int main()
+{
+    ConsoleAudio* service = new ConsoleAudio();
+    Locator::provide(service);
+
+    int VERY_LOAD_BANG = 0;
+    Audio* audio = Locator::getAudio();
+    audio->playSound(VERY_LOAD_BANG);
+
+    delete audio;
+    return 0;
+}

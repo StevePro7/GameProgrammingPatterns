@@ -1,0 +1,18 @@
+#include <iostream>
+#include "Singleton05.h"
+
+using namespace Singleton05;
+
+int main()
+{
+    if (NULL == &FileSystem::Instance())
+    {
+        std::cout << "Singleton is NULL!" << std::endl;
+    }
+    else
+    {
+        std::cout << "Singleton is OK" << std::endl;
+    }
+
+    return 0;
+}

@@ -1,0 +1,10 @@
+#include "DoubleBuffer02.h"
+
+using namespace Buffered;
+
+int main()
+{
+    Scene scene;
+    scene.draw();
+    return 0;
+}

@@ -1,0 +1,121 @@
+#include "Observer04.h"
+#include <assert.h>
+
+using namespace One;
+
+void destructSoloObserverTest()
+{
+    Ear* ear = new Ear("ear");
+    Noise noise("beep");
+    ear->observe(noise);
+
+    delete ear;
+    assert(!noise.hasObserver());
+
+    noise.sound();
+}
+void destructMultipleObserverTest()
+{
+    Ear* ear1 = new Ear("ear #1");
+    Ear* ear2 = new Ear("ear #2");
+    Noise noise("beep");
+    ear1->observe(noise);
+    ear2->observe(noise);
+
+    delete ear2;
+    assert(noise.hasObserver());
+
+    delete ear1;
+    assert(!noise.hasObserver());
+
+    noise.sound();
+}
+void destructObservableTest()
+{
+    Ear ear1("ear1");
+    Ear ear2("ear2");
+    Noise* noise = new Noise("beep");
+    ear1.observe(*noise);
+    ear2.observe(*noise);
+
+    delete noise;
+    assert(!ear1.isObserving());
+    assert(!ear2.isObserving());
+}
+void notifyTest()
+{
+    Noise noise1("beep");
+    Ear ear1("one");
+    Ear ear2("two");
+    Ear ear3("thr");
+
+    noise1.sound();
+    assert(0 == ear1.getNumObserved());
+    assert(0 == ear2.getNumObserved());
+    assert(0 == ear3.getNumObserved());
+
+    ear1.observe(noise1);
+    noise1.sound();
+    assert(1 == ear1.getNumObserved());
+    assert(0 == ear2.getNumObserved());
+    assert(0 == ear3.getNumObserved());
+
+    ear2.observe(noise1);
+    noise1.sound();
+    assert(2 == ear1.getNumObserved());
+    assert(1 == ear2.getNumObserved());
+    assert(0 == ear3.getNumObserved());
+
+    ear3.observe(noise1);
+    noise1.sound();
+    assert(3 == ear1.getNumObserved());
+    assert(2 == ear2.getNumObserved());
+    assert(1 == ear3.getNumObserved());
+
+    ear2.detach();
+    noise1.sound();
+    assert(4 == ear1.getNumObserved());
+    assert(2 == ear2.getNumObserved());
+    assert(2 == ear3.getNumObserved());
+
+    ear1.detach();
+    noise1.sound();
+    assert(4 == ear1.getNumObserved());
+    assert(2 == ear2.getNumObserved());
+    assert(3 == ear3.getNumObserved());
+
+    ear3.detach();
+    noise1.sound();
+    assert(4 == ear1.getNumObserved());
+    assert(2 == ear2.getNumObserved());
+    assert(3 == ear3.getNumObserved());
+}
+void observeTest()
+{
+    Ear ear("ear");
+    Noise beep("beep");
+    Noise boop("boop");
+
+    ear.observe(beep);
+    beep.sound();
+    assert(1 == ear.getNumObserved());
+    boop.sound();
+    assert(1 == ear.getNumObserved());
+
+    // Should stop listening to beep.
+    ear.observe(boop);
+    beep.sound();
+    assert(1 == ear.getNumObserved());
+    boop.sound();
+    assert(2 == ear.getNumObserved());
+}
+
+int main()
+{
+    destructSoloObserverTest();
+    destructMultipleObserverTest();
+    destructObservableTest();
+    notifyTest();
+    observeTest();
+    return 0;
+}

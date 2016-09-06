@@ -1,0 +1,11 @@
+#include "EventQueue06.h"
+
+using namespace Ring;
+
+int main()
+{
+    Audio::init();
+    Audio::playSound(SOUND_BLOOP, VOL_MAX);
+    Audio::update();
+    return 0;
+}

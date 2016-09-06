@@ -1,0 +1,9 @@
+#include "EventQueue04.h"
+
+using namespace DeferList2;
+
+int main()
+{
+    Audio::update();
+    return 0;
+}

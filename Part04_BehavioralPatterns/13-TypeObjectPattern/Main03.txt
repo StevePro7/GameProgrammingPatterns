@@ -1,0 +1,17 @@
+#include "TypeObject03.h"
+
+using namespace BreedCtor;
+
+template<class T>
+void use(const T& obj)
+{
+}
+
+int main()
+{
+    Breed& someBreed = *(new Breed(1, "foo"));
+    Monster* monster = someBreed.newMonster();
+    use(monster);
+    delete monster;
+    return 0;
+}

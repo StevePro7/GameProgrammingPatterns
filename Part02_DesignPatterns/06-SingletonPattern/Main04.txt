@@ -1,0 +1,19 @@
+#include <iostream>
+#include "Singleton04.h"
+
+using namespace Singleton04;
+
+int main()
+{
+    if (NULL == &PS3FileSystem::Instance())
+    {
+        std::cout << "Singleton is NULL!" << std::endl;
+    }
+    else
+    {
+        std::cout << "Singleton is OK" << std::endl;
+        PS3FileSystem::Instance().writeFile("path", "contents");
+    }
+
+    return 0;
+}

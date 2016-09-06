@@ -1,0 +1,9 @@
+#include <iostream>
+#include "Singleton03.h"
+
+using namespace Singleton03;
+
+int main()
+{
+    return 0;
+}

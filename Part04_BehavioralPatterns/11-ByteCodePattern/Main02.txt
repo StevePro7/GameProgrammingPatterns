@@ -1,0 +1,16 @@
+#include "ByteCode00.h"
+#include "ByteCode02.h"
+
+using namespace NoParams;
+
+int main()
+{
+    char c1 = INST_SET_WISDOM;
+    char c2 = INST_SET_AGILITY;
+    char bytecode[] = { c1, c2 };
+
+    VM vm;
+    vm.interpret(bytecode, 2);
+
+    return 0;
+}

@@ -1,0 +1,23 @@
+#include "Prototype01.h"
+
+using namespace PrototypePattern;
+using namespace Clone;
+
+template<class T>
+void use(const T& obj)
+{
+}
+
+int main()
+{
+    // Spawn ghost clone.
+    Monster* ghostPrototype = new Ghost(15, 3);
+    Spawner* ghostSpawner = new Spawner(ghostPrototype);
+
+    // Spawn ghost clone.
+    use(ghostPrototype);
+
+    delete ghostSpawner;
+    delete ghostPrototype;
+    return 0;
+}

@@ -1,0 +1,22 @@
+#include "Prototype02.h"
+
+using namespace Callbacks;
+
+template<class T>
+void use(const T& obj)
+{
+}
+
+Monster* spawnGhost()
+{
+    return new Ghost();
+}
+
+int main()
+{
+    // Spawn ghost callback.
+    Spawner* ghostSpawner = new Spawner(spawnGhost);
+    use(ghostSpawner);
+    delete ghostSpawner;
+    return 0;
+}

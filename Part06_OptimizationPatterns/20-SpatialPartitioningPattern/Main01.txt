@@ -1,0 +1,44 @@
+#include "SpatialPartition01.h"
+#include <vector>
+
+using namespace SpatialPartition;
+std::vector<std::pair<Unit*, Unit*> > hits;
+
+void handleAttack(Unit* a, Unit* b);
+void handleMelee(Unit* unit[], int numUnits);
+
+int main()
+{
+    Unit* units[5];
+    units[0] = new Unit("a", 1);
+    units[1] = new Unit("b", 2);
+    units[2] = new Unit("c", 3);
+    units[3] = new Unit("d", 2);
+    units[4] = new Unit("e", 1);
+
+    handleMelee(units, 5);
+    Unit* first = hits[0].first;
+    Unit* second = hits[0].second;
+    int aPosition = first->GetPosition();
+    int bPosition = second->GetPosition();
+    return 0;
+}
+
+void handleAttack(Unit* a, Unit* b)
+{
+    hits.push_back(std::make_pair(a, b));
+}
+
+void handleMelee(Unit* units[], int numUnits)
+{
+    for (int a = 0; a < numUnits - 1; ++a)
+    {
+        for (int b = a + 1; b < numUnits; ++b)
+        {
+            if (units[a]->GetPosition() == units[b]->GetPosition())
+            {
+                handleAttack(units[a], units[b]);
+            }
+        }
+    }
+}

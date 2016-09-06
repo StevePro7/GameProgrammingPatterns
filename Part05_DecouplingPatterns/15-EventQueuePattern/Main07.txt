@@ -1,0 +1,12 @@
+#include "EventQueue07.h"
+
+using namespace Duplicate;
+
+int main()
+{
+    Audio::init();
+    Audio::playSound(SOUND_BLOOP, VOL_MAX);
+    Audio::playSound(SOUND_BLOOP, VOL_MAX);
+    Audio::update();
+    return 0;
+}

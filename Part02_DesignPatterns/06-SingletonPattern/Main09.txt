@@ -1,0 +1,10 @@
+#include <iostream>
+#include "Singleton09.h"
+
+using namespace Singleton09;
+
+int main()
+{
+    Enemy enemy;
+    return 0;
+}

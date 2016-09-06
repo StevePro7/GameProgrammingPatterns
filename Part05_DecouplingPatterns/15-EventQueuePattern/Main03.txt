@@ -1,0 +1,10 @@
+#include "EventQueue03.h"
+
+using namespace DeferList;
+
+int main()
+{
+    Audio::init();
+    Audio::playSound(SOUND_BLOOP, VOL_MAX);
+    return 0;
+}

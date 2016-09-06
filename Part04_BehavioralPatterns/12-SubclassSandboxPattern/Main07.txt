@@ -1,0 +1,13 @@
+#include "SubclassSandbox07.h"
+
+using namespace TwoStageInit;
+
+int main()
+{
+    ParticleSystem* particles = new ParticleSystem;
+    Superpower* power = new SkyLaunch();
+    power->init(particles);
+    delete power;
+    delete particles;
+    return 0;
+}

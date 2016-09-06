@@ -1,0 +1,11 @@
+#include "EventQueue05.h"
+
+using namespace HeadTail;
+
+int main()
+{
+    Audio::init();
+    Audio::playSound(SOUND_BLOOP, VOL_MAX);
+    Audio::update();
+    return 0;
+}

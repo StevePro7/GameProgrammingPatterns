@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03-FlyweightPattern", "03-FlyweightPattern.vcxproj", "{55A7534E-EC80-4568-8FDB-D31BE9E10B56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55A7534E-EC80-4568-8FDB-D31BE9E10B56}.Debug|Win32.ActiveCfg = Debug|Win32
+		{55A7534E-EC80-4568-8FDB-D31BE9E10B56}.Debug|Win32.Build.0 = Debug|Win32
+		{55A7534E-EC80-4568-8FDB-D31BE9E10B56}.Release|Win32.ActiveCfg = Release|Win32
+		{55A7534E-EC80-4568-8FDB-D31BE9E10B56}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

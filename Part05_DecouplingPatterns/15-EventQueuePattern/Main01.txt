@@ -1,0 +1,9 @@
+#include "EventQueue01.h"
+
+using namespace EventQueue;
+
+int main()
+{
+    eventLoop();
+    return 0;
+}

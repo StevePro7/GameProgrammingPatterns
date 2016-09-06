@@ -1,0 +1,25 @@
+#include "SpatialPartition05.h"
+
+using namespace FixedGrid;
+
+int main()
+{
+    Grid grid;
+
+    Unit a(&grid, "a", 0, 0);
+    Unit b(&grid, "b", 0, 0);
+    Unit c(&grid, "c", 0, 0);
+
+    b.move(50, 65);
+    c.move(55, 65);
+    a.move(20, 100);
+    c.move(22, 100);
+
+    Unit* unitA = grid.findAt(20, 100);
+    Unit* unitB = grid.findAt(50, 65);
+    Unit* unitC = grid.findAt(22, 100);
+
+    bool a1 = &a == unitA;
+    bool b1 = &b == unitB;
+    bool c1 = &c == unitC;
+}

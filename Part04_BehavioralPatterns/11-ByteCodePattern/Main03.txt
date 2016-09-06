@@ -1,0 +1,9 @@
+#include "ByteCode03.h"
+
+using namespace Stack;
+
+int main()
+{
+    VM vm;
+    return 0;
+}

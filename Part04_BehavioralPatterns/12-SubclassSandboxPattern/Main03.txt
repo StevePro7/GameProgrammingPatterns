@@ -1,0 +1,16 @@
+#include "SubclassSandbox03.h"
+
+using namespace Forwarding;
+
+SoundEngine soundEngine;
+
+void playSound(SoundId sound, double volume)
+{
+    soundEngine.play(sound, volume);
+}
+
+int main()
+{
+    playSound(SOUND_SPRING, 1.0f);
+    return 0;
+}

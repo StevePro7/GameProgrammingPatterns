@@ -1,0 +1,77 @@
+#include "DataLocality01.h"
+
+using namespace DataLocality01;
+
+void gameLoop();
+void componentArrays();
+
+static const int MAX_ENTITIES = 100;
+
+int main()
+{
+    gameLoop();
+    return 0;
+}
+
+void gameLoop()
+{
+    const int numEntities = 123;
+    GameEntity* entities[numEntities];
+    bool gameOver = false;
+
+    while (!gameLoop)
+    {
+        // Process AI.
+        for (int i = 0; i < numEntities; ++i)
+        {
+            entities[i]->getAI()->update();
+        }
+
+        // Update physics.
+        for (int i = 0; i < numEntities; ++i)
+        {
+            entities[i]->getPhysics()->update();
+        }
+
+        // Draw to screen.
+        for (int i = 0; i < numEntities; ++i)
+        {
+            entities[i]->getRender()->render();
+        }
+    }
+}
+
+void componentArrays()
+{
+    AIComponent* aiComponents = new AIComponent[MAX_ENTITIES];
+    PhysicsComponent* physicsComponents = new PhysicsComponent[MAX_ENTITIES];
+    RenderComponent* renderComponents = new RenderComponent[MAX_ENTITIES];
+
+    int numEntities = 123;
+    bool gameOver = false;
+
+    while (!gameOver)
+    {
+        // Process AI.
+        for (int i = 0; i < numEntities; ++i)
+        {
+            aiComponents[i].update();
+        }
+
+        // Update physics.
+        for (int i = 0; i < numEntities; ++i)
+        {
+            physicsComponents[i].update();
+        }
+
+        // Draw to screen.
+        for (int i = 0; i < numEntities; ++i)
+        {
+            renderComponents[i].render();
+        }
+    }
+
+    delete[] aiComponents;
+    delete[] physicsComponents;
+    delete[] renderComponents;
+}

@@ -1,0 +1,12 @@
+#include <iostream>
+#include "Singleton08.h"
+
+using namespace Singleton08;
+
+int main()
+{
+    Bullet bullet(10, 20);
+    bool isOnScreen = bullet.isOnScreen();
+    bullet.move();
+    return 0;
+}

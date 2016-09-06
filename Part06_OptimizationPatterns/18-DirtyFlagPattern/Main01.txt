@@ -1,0 +1,16 @@
+#include "DirtyFlag01.h"
+
+using namespace DirtyFlag;
+
+template<class T>
+void use(const T& obj)
+{
+}
+
+int main()
+{
+    GraphNode* graph = new GraphNode(NULL);
+    use(graph);
+    delete graph;
+    return 0;
+}

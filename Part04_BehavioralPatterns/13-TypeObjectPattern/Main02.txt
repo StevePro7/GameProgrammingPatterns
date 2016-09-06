@@ -1,0 +1,18 @@
+#include "TypeObject02.h"
+
+using namespace NoInheritance;
+
+template<class T>
+void use(const T& obj)
+{
+}
+
+int main()
+{
+    Breed& someBreed = *(new Breed(123, "Attack!"));
+    Monster* monster = new Monster(someBreed);
+    use(monster);
+
+    delete monster;
+    return 0;
+}
